@@ -1,0 +1,43 @@
+# =======================================
+# .NET build artifacts
+# =======================================
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# VS Code / IDE
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Temporary files
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet packages (restore on build)
+*.nupkg
+packages/
+
+# Rider
+*.sln.iml
+
+# =======================================
+# Advent of Code repo specifics
+# Keep ONLY code, csproj, sln, input files
+# =======================================
+
+# Ignore any accidental zipped inputs
+*.zip
+
+# Ignore sample outputs if generated
+*.out
+*.result
