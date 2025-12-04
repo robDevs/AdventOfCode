@@ -16,9 +16,6 @@ static int SolvePartOne(string[] input)
             {
                 int pair = int.Parse(line[i].ToString() + line[x].ToString());
 
-                Console.WriteLine(line[i].ToString() + line[x].ToString());
-                Console.WriteLine(pair);
-
                 if (pair > largest) largest = pair;
             }
         }
