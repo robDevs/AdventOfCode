@@ -9,18 +9,24 @@ static int SolvePartOne(string[] input)
 
     foreach (string line in input)
     {
-        int largest = 0;
-        for (int i = 0; i < line.Length - 1; i++)
-        {
-            for (int x = i + 1; x < line.Length; x++)
-            {
-                int pair = int.Parse(line[i].ToString() + line[x].ToString());
-
-                if (pair > largest) largest = pair;
-            }
-        }
-        sumLargestPairs += largest;
+        int first = LargestIntPos(line.Substring(0, line.Length - 1));
+        int second = first + 1 + LargestIntPos(line.Substring(first + 1));
+        sumLargestPairs += int.Parse(line[first].ToString() + line[second].ToString());
     }
 
     return sumLargestPairs;
+}
+
+static int LargestIntPos(string input)
+{
+    int largest = 0;
+
+    for (int i = 0; i < input.Length; i++)
+    {
+        int num = int.Parse(input[i].ToString());
+
+        if (num > int.Parse(input[largest].ToString())) largest = i;
+    }
+
+    return largest;
 }
